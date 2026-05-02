@@ -259,7 +259,7 @@ async function fetchAndSendNotifications(now: number, user: FilteredUser): Promi
 	};
 }
 
-Deno.cron("Fetch and send notifications", { minute: { every: 1 } }, async () => {
+Deno.cron("Fetch and send notifications", { minute: { every: 5 } }, async () => {
 	console.log("Starting cron: fetch and send notifications");
 	const cronStart = Date.now();
 	const users = await Array.fromAsync(
