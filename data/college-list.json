@@ -1,0 +1,543 @@
+{
+	"0": {
+		"clgId": 0,
+		"base_url": "https://gcek.etlab.in/androidapp/",
+		"regUrl": "https://gcek.etlab.in/androidapp/registration/",
+		"clgName": "Government College of Engineering, Kannur"
+	},
+	"1": {
+		"clgId": 1,
+		"base_url": "https://gecskp.etlab.in/androidapp/",
+		"regUrl": "https://gecskp.etlab.in/androidapp/registration/",
+		"clgName": "Government Engineering College, Sreekrishnapuram"
+	},
+	"2": {
+		"clgId": 2,
+		"base_url": "https://cev.etlab.in/androidapp/",
+		"regUrl": "https://cev.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering Vadakara"
+	},
+	"3": {
+		"clgId": 3,
+		"base_url": "https://gectcr.etlab.in/androidapp/",
+		"regUrl": "https://gectcr.etlab.in/androidapp/registration/",
+		"clgName": "Government Engineering College, Thrissur"
+	},
+	"4": {
+		"clgId": 4,
+		"base_url": "https://cetkr.etlab.in/androidapp/",
+		"regUrl": "https://cetkr.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering Trikaripur"
+	},
+	"6": {
+		"clgId": 6,
+		"base_url": "https://nssce.etlab.in/androidapp/",
+		"regUrl": "https://nssce.etlab.in/androidapp/registration/",
+		"clgName": "NSS College of Engineering, Palakkad"
+	},
+	"8": {
+		"clgId": 8,
+		"base_url": "https://coet.etlab.in/androidapp/",
+		"regUrl": "https://coet.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering Thalassery"
+	},
+	"9": {
+		"clgId": 9,
+		"base_url": "https://tkmsa.etlab.in/androidapp/",
+		"regUrl": "https://tkmsa.etlab.in/androidapp/registration/",
+		"clgName": "TKM School of Architecture, Kollam"
+	},
+	"10": {
+		"clgId": 10,
+		"base_url": "https://geckkd.etlab.in/androidapp/",
+		"regUrl": "https://geckkd.etlab.in/androidapp/registration/",
+		"clgName": "Government Engineering College, Kozhikode"
+	},
+	"11": {
+		"clgId": 11,
+		"base_url": "https://gecwyd.etlab.in/androidapp/",
+		"regUrl": "https://gecwyd.etlab.in/androidapp/registration/",
+		"clgName": "Government Engineering College, Wayanad"
+	},
+	"12": {
+		"clgId": 12,
+		"base_url": "https://mgc.etlab.in/androidapp/",
+		"regUrl": "https://mgc.etlab.in/androidapp/registration/",
+		"clgName": "Mahathma Gandhi College, Iritty"
+	},
+	"13": {
+		"clgId": 13,
+		"base_url": "https://sadiya.etlab.in/androidapp/",
+		"regUrl": "https://sadiya.etlab.in/androidapp/registration/",
+		"clgName": "Sa-adiya Arts & Science College, kasaragod"
+	},
+	"14": {
+		"clgId": 14,
+		"base_url": "https://sctce.etlab.in/androidapp/",
+		"regUrl": "https://sctce.etlab.in/androidapp/registration/",
+		"clgName": "Sree Chitra Thirunal College of Engineering Thiruvananthapuram"
+	},
+	"15": {
+		"clgId": 15,
+		"base_url": "https://mitkannur.etlab.in/androidapp/",
+		"regUrl": "https://mitkannur.etlab.in/androidapp/registration/",
+		"clgName": "Malabar Institute of Technology, Anjarakandy"
+	},
+	"16": {
+		"clgId": 16,
+		"base_url": "https://tkmce.etlab.in/androidapp/",
+		"regUrl": "https://tkmce.etlab.in/androidapp/registration/",
+		"clgName": "TKM College of Engineering, Kollam"
+	},
+	"18": {
+		"clgId": 18,
+		"base_url": "https://mcet.etlab.in/androidapp/",
+		"regUrl": "https://mcet.etlab.in/androidapp/registration/",
+		"clgName": "Mohandas College of Engineering and Technology, Thiruvananthapuram"
+	},
+	"20": {
+		"clgId": 20,
+		"base_url": "https://mace.etlab.in/androidapp/",
+		"regUrl": "https://mace.etlab.in/androidapp/registration/",
+		"clgName": "Mar Athanasius College of Engineering, Kothamangalam"
+	},
+	"23": {
+		"clgId": 23,
+		"base_url": "https://mdit.etlab.in/androidapp/",
+		"regUrl": "https://mdit.etlab.in/androidapp/registration/",
+		"clgName": "M.Dasan Institute of Technology[MDIT], Kozhikode"
+	},
+	"24": {
+		"clgId": 24,
+		"base_url": "https://snckannur.etlab.in/androidapp/",
+		"regUrl": "https://snckannur.etlab.in/androidapp/registration/",
+		"clgName": "Sree Narayana College, Kannur"
+	},
+	"25": {
+		"clgId": 25,
+		"base_url": "https://naher.etlab.in/androidapp/",
+		"regUrl": "https://naher.etlab.in/androidapp/registration/",
+		"clgName": "NAHER Arts & Science College, Kanhirode"
+	},
+	"26": {
+		"clgId": 26,
+		"base_url": "https://mditpoly.etlab.in/androidapp/",
+		"regUrl": "https://mditpoly.etlab.in/androidapp/registration/",
+		"clgName": "M.Dasan Institute of Technology Polytechnic College[MDIT Poly], Kozhikode"
+	},
+	"27": {
+		"clgId": 27,
+		"base_url": "https://cep.etlab.in/androidapp/",
+		"regUrl": "https://cep.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering Perumon, Kollam"
+	},
+	"28": {
+		"clgId": 28,
+		"base_url": "https://geci.etlab.in/androidapp/",
+		"regUrl": "https://geci.etlab.in/androidapp/registration/",
+		"clgName": "Government Engineering College Idukki"
+	},
+	"30": {
+		"clgId": 30,
+		"base_url": "https://kmea.etlab.in/androidapp/",
+		"regUrl": "https://kmea.etlab.in/androidapp/registration/",
+		"clgName": "KMEA Engineering College, Aluva"
+	},
+	"31": {
+		"clgId": 31,
+		"base_url": "https://kmeacoa.etlab.in/androidapp/",
+		"regUrl": "https://kmeacoa.etlab.in/androidapp/registration/",
+		"clgName": "KMEA College of Architecture, Aluva"
+	},
+	"32": {
+		"clgId": 32,
+		"base_url": "https://kmeaarts.etlab.in/androidapp/",
+		"regUrl": "https://kmeaarts.etlab.in/androidapp/registration/",
+		"clgName": "KMEA College Of Arts And Science, Aluva"
+	},
+	"33": {
+		"clgId": 33,
+		"base_url": "https://sjcp.etlab.in/androidapp/",
+		"regUrl": "https://sjcp.etlab.in/androidapp/registration/",
+		"clgName": "St.Joseph's College, Pilathara"
+	},
+	"34": {
+		"clgId": 34,
+		"base_url": "https://aisat.etlab.in/androidapp/",
+		"regUrl": "https://aisat.etlab.in/androidapp/registration/",
+		"clgName": "Albertian Institute of Science & Technology, Kochin"
+	},
+	"35": {
+		"clgId": 35,
+		"base_url": "https://sjcetpalai.etlab.in/androidapp/",
+		"regUrl": "https://sjcet.etlab.in/androidapp/registration/",
+		"clgName": "St. Joseph's College of Engineering and Technology, Palai"
+	},
+	"36": {
+		"clgId": 36,
+		"base_url": "https://marian.etlab.in/androidapp/",
+		"regUrl": "https://marian.etlab.in/androidapp/registration/",
+		"clgName": "Marian Engineering College, Thiruvananthapuram"
+	},
+	"37": {
+		"clgId": 37,
+		"base_url": "https://cet.etlab.in/androidapp/",
+		"regUrl": "https://cet.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering Trivandrum"
+	},
+	"38": {
+		"clgId": 38,
+		"base_url": "https://jecc.etlab.in/androidapp/",
+		"regUrl": "https://jecc.etlab.in/androidapp/registration/",
+		"clgName": "Jyothi Engineering College, Cheruthuruthy"
+	},
+	"39": {
+		"clgId": 39,
+		"base_url": "https://bji.etlab.in/androidapp/",
+		"regUrl": "https://bji.etlab.in/androidapp/registration/",
+		"clgName": "Bishop Jerome Institute, Kollam"
+	},
+	"40": {
+		"clgId": 40,
+		"base_url": "https://cetp.etlab.in/androidapp/",
+		"regUrl": "https://cetp.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering and Technology, Payyanur"
+	},
+	"41": {
+		"clgId": 41,
+		"base_url": "https://kmctce.etlab.app/androidapp/",
+		"regUrl": "https://kmctce.etlab.app/androidapp/registration/",
+		"clgName": "KMCT Engineering College, Kozhikode"
+	},
+	"42": {
+		"clgId": 42,
+		"base_url": "https://kmctcew.etlab.in/androidapp/",
+		"regUrl": "https://kmctcew.etlab.in/androidapp/registration/",
+		"clgName": "KMCT Women's Engineering College, Kozhikode"
+	},
+	"43": {
+		"clgId": 43,
+		"base_url": "https://mesitam.etlab.in/androidapp/",
+		"regUrl": "https://mesitam.etlab.in/androidapp/registration/",
+		"clgName": "MES Institute of Technology and Management, Kollam"
+	},
+	"44": {
+		"clgId": 44,
+		"base_url": "https://mea.etlab.app/androidapp/",
+		"regUrl": "https://mea.etlab.app/androidapp/registration/",
+		"clgName": "MEA Engineering College, Perinthalmanna"
+	},
+	"45": {
+		"clgId": 45,
+		"base_url": "https://icet.etlab.in/androidapp/",
+		"regUrl": "https://icet.etlab.in/androidapp/registration/",
+		"clgName": "Ilahia College of Engineering and Technology"
+	},
+	"46": {
+		"clgId": 46,
+		"base_url": "https://sngce.etlab.in/androidapp/",
+		"regUrl": "https://sngce.etlab.in/androidapp/registration/",
+		"clgName": "Sree Narayana Gurukulam College of Engineering, Ernakulam"
+	},
+	"47": {
+		"clgId": 47,
+		"base_url": "https://vjcet.etlab.in/androidapp/",
+		"regUrl": "https://vjcet.etlab.in/androidapp/registration/",
+		"clgName": "Viswajyothi College of Engineering and Technology, Vazhakulam"
+	},
+	"48": {
+		"clgId": 48,
+		"base_url": "https://awh.etlab.app/androidapp/",
+		"regUrl": "https://awh.etlab.app/androidapp/registration/",
+		"clgName": "AWH Engineering College, Kozhikode"
+	},
+	"49": {
+		"clgId": 49,
+		"base_url": "https://iccs.etlab.in/androidapp/",
+		"regUrl": "https://iccs.etlab.in/androidapp/registration/",
+		"clgName": "ICCS College of Engineering and Management"
+	},
+	"50": {
+		"clgId": 50,
+		"base_url": "https://iipe.etlab.in/androidapp/",
+		"regUrl": "https://iipe.etlab.in/androidapp/registration/",
+		"clgName": "Indira Gandhi Institute of Polytechnic and Engineering"
+	},
+	"51": {
+		"clgId": 51,
+		"base_url": "https://rit.etlab.in/androidapp/",
+		"regUrl": "https://rit.etlab.in/androidapp/registration/",
+		"clgName": "Rajiv Gandhi Institute Of Technology, Kottayam"
+	},
+	"52": {
+		"clgId": 52,
+		"base_url": "https://asiet.etlab.app/androidapp/",
+		"regUrl": "https://asiet.etlab.app/androidapp/registration/",
+		"clgName": "Adi Shankara Institute of Engineering and Technology, Kalady"
+	},
+	"53": {
+		"clgId": 53,
+		"base_url": "https://cek.etlab.in/androidapp/",
+		"regUrl": "https://cek.etlab.in/androidapp/registration/",
+		"clgName": "College of Engineering Kidangoor, Kottayam"
+	},
+	"54": {
+		"clgId": 54,
+		"base_url": "https://jcmcsiit.etlab.in/androidapp/",
+		"regUrl": "https://jcmcsiit.etlab.in/androidapp/registration/",
+		"clgName": "John Cox Memorial CSI Institute of Technology, Trivandrum"
+	},
+	"55": {
+		"clgId": "55",
+		"base_url": "https://tkmim.etlab.in/androidapp/",
+		"regUrl": "https://tkmim.etlab.in/androidapp/registration/",
+		"clgName": "TKM Institute of Management, Kollam"
+	},
+	"56": {
+		"clgId": "56",
+		"base_url": "https://mtct.etlab.in/androidapp/",
+		"regUrl": "https://mtct.etlab.in/androidapp/registration/",
+		"clgName": "Mar Thoma College, Tiruvalla"
+	},
+	"57": {
+		"clgId": 57,
+		"base_url": "https://sngcet.etlab.app/androidapp/",
+		"regUrl": "https://sngcet.etlab.app/androidapp/registration/",
+		"clgName": "Sree Narayana Guru College of Engineering and Technology, Payyanur"
+	},
+	"58": {
+		"clgId": 58,
+		"base_url": "https://gecb.etlab.in/androidapp/",
+		"regUrl": "https://gecb.etlab.in/androidapp/registration/",
+		"clgName": "Government Engineering College Barton Hill, Thiruvananthapuram"
+	},
+	"59": {
+		"clgId": 59,
+		"base_url": "https://mits.etlab.app/androidapp/",
+		"regUrl": "https://mits.etlab.app/androidapp/registration/",
+		"clgName": "Muthoot Institute of Technology & Science, Kochin"
+	},
+	"60": {
+		"clgId": 60,
+		"base_url": "https://tmc.etlab.in/androidapp/",
+		"regUrl": "https://tmc.etlab.in/androidapp/registration/",
+		"clgName": "Travancore medical college, Thazhuthala"
+	},
+	"61": {
+		"clgId": 61,
+		"base_url": "https://sahrdaya.etlab.in/androidapp/",
+		"regUrl": "https://sahrdaya.etlab.in/androidapp/registration/",
+		"clgName": "Sahrdaya College of Engineering and Technology, Kodakara"
+	},
+	"62": {
+		"clgId": "62",
+		"base_url": "https://mvjce.etlab.app/androidapp/",
+		"regUrl": "https://mvjce.etlab.app/androidapp/registration/",
+		"clgName": "MVJ College of Engineering, Bangalore"
+	},
+	"63": {
+		"clgId": "63",
+		"base_url": "https://tkmit.etlab.in/androidapp/",
+		"regUrl": "https://tkmit.etlab.in/androidapp/registration/",
+		"clgName": "TKM Institute of Technology, Kollam"
+	},
+	"64": {
+		"clgId": 64,
+		"base_url": "https://lead.etlab.app/androidapp/",
+		"regUrl": "https://lead.etlab.app/androidapp/registration/",
+		"clgName": "LEAD College of Management, Dhoni"
+	},
+	"65": {
+		"clgId": 65,
+		"base_url": "https://gasc.etlab.in/androidapp/",
+		"regUrl": "https://gasc.etlab.in/androidapp/registration/",
+		"clgName": "Government Arts And Science College, Calicut"
+	},
+	"66": {
+		"clgId": 66,
+		"base_url": "https://sbce.etlab.app/androidapp/",
+		"regUrl": "https://sbce.etlab.app/androidapp/registration/",
+		"clgName": "Sree Buddha College of Engineering, Pattoor"
+	},
+	"67": {
+		"clgId": 67,
+		"base_url": "https://brennen.etlab.in/androidapp/",
+		"regUrl": "https://brennen.etlab.in/androidapp/registration/",
+		"clgName": "Govt Brennen College, Thalassery"
+	},
+	"68": {
+		"clgId": 68,
+		"base_url": "https://christ.etlab.app/androidapp/",
+		"regUrl": "https://christ.etlab.app/androidapp/registration/",
+		"clgName": "Christ College of Engineering, Irinjalakuda"
+	},
+	"69": {
+		"clgId": 69,
+		"base_url": "https://stpius.etlab.in/androidapp/",
+		"regUrl": "https://stpius.etlab.in/androidapp/registration/",
+		"clgName": "St Pius X College, Rajapuram"
+	},
+	"70": {
+		"clgId": 70,
+		"base_url": "https://vjec.etlab.app/androidapp/",
+		"regUrl": "https://vjec.etlab.app/androidapp/registration/",
+		"clgName": "Vimal jyothi Engineering College, Chemperi"
+	},
+	"71": {
+		"clgId": 71,
+		"base_url": "https://mbits.etlab.app/androidapp/",
+		"regUrl": "https://mbits.etlab.app/androidapp/registration/",
+		"clgName": "Mar Baselios Institute of Technology and Science, Kothamangalam"
+	},
+	"72": {
+		"clgId": 72,
+		"base_url": "https://iesce.etlab.app/androidapp/",
+		"regUrl": "https://iesce.etlab.app/androidapp/registration/",
+		"clgName": "IES College of Engineering, Chittilappilly"
+	},
+	"224": {
+		"clgId": 224,
+		"base_url": "https://engnr.etlab.in/androidapp/",
+		"regUrl": "https://engnr.etlab.in/androidapp/registration/",
+		"clgName": "Etlab Engineer"
+	},
+	"227": {
+		"clgId": 227,
+		"base_url": "https://arts.etlab.in/androidapp/",
+		"regUrl": "https://arts.etlab.in/androidapp/registration/",
+		"clgName": "Etlab Arts"
+	},
+	"228": {
+		"clgId": 228,
+		"base_url": "https://demo.etlab.in/androidapp/",
+		"regUrl": "https://demo.etlab.in/androidapp/registration/",
+		"clgName": "DEMO ETLAB"
+	},
+	"229": {
+		"clgId": 229,
+		"base_url": "https:////https://hrms.etuwa.in/backend/web/api",
+		"regUrl": "",
+		"clgName": "Etlab HRM"
+	},
+	"230": { "clgId": 230, "base_url": "https://uat.demo.etlab.app/androidapp/", "regUrl": "", "clgName": "Etlab UAT" },
+	"231": {
+		"clgId": 231,
+		"base_url": "https://demo.etlab.app/androidapp/",
+		"regUrl": "https://demo.etlab.app/androidapp/registration/",
+		"clgName": "DEMO App"
+	},
+	"233": {
+		"clgId": 233,
+		"base_url": "https://iesca.etlab.app/androidapp/",
+		"regUrl": "https://iesca.etlab.app/androidapp/registration/",
+		"clgName": "IES College of Architecture"
+	},
+	"234": {
+		"clgId": 234,
+		"base_url": "https://lbsitw.etlab.app/androidapp/",
+		"regUrl": "https://lbsitw.etlab.app/androidapp/registration/",
+		"clgName": "LBS Institute of Technology for Women, Thiruvananthapuram"
+	},
+	"235": {
+		"clgId": 235,
+		"base_url": "https://ukfcet.etlab.app/androidapp/",
+		"regUrl": "https://ukfcet.etlab.app/androidapp/registration/",
+		"clgName": "UKF College of Engineering and Technology"
+	},
+	"236": {
+		"clgId": 236,
+		"base_url": "https://allsaints.etlab.app/androidapp/",
+		"regUrl": "https://allsaints.etlab.app/androidapp/registration/",
+		"clgName": "All Saints' College, Thiruvananthapuram"
+	},
+	"237": {
+		"clgId": 237,
+		"base_url": "https://lbscek.etlab.app/androidapp/",
+		"regUrl": "https://lbscek.etlab.app/androidapp/registration/",
+		"clgName": "LBS College of Engineering,Kasaragod"
+	},
+	"238": {
+		"clgId": 238,
+		"base_url": "https://cempunnapra.etlab.app/androidapp/",
+		"regUrl": "https://cempunnapra.etlab.app/androidapp/registration/",
+		"clgName": "College of Engineering and Management Punnapra"
+	},
+	"239": {
+		"clgId": 239,
+		"base_url": "https://con.etlab.in/androidapp/",
+		"regUrl": "https://con.etlab.in/androidapp/registration/",
+		"clgName": "College of Nursing, Anjarkand"
+	},
+	"240": {
+		"clgId": 240,
+		"base_url": "https://kdc.etlab.in/androidapp/",
+		"regUrl": "https://kdc.etlab.in/androidapp/registration/",
+		"clgName": "Kannur Dental College"
+	},
+	"241": {
+		"clgId": 241,
+		"base_url": "https://cop.etlab.in/androidapp/",
+		"regUrl": "https://cop.etlab.in/androidapp/registration/",
+		"clgName": "College of Pharmacy"
+	},
+	"242": {
+		"clgId": 242,
+		"base_url": "https://carmelcet.etlab.app/androidapp/",
+		"regUrl": "https://carmelcet.etlab.app/androidapp/registration/",
+		"clgName": "Carmel College of Engineering & Technology"
+	},
+	"243": {
+		"clgId": 243,
+		"base_url": "https://concord.etlab.in/androidapp/",
+		"regUrl": "https://concord.etlab.in/androidapp/registration/",
+		"clgName": "Concord Arts & Science College"
+	},
+	"244": {
+		"clgId": 244,
+		"base_url": "https://mbs.etlab.app/androidapp/",
+		"regUrl": "https://mbs.etlab.app/androidapp/registration/",
+		"clgName": "Muthoot Business School"
+	},
+	"245": {
+		"clgId": 245,
+		"base_url": "https://asb.etlab.app/androidapp/",
+		"regUrl": "https://asb.etlab.app/androidapp/registration/",
+		"clgName": "Asian School of Business Trivandrum"
+	},
+	"246": {
+		"clgId": 246,
+		"base_url": "https://preprod-uat.etlab.app/androidapp/",
+		"regUrl": "https://preprod-uat.etlab.app/androidapp/registration/",
+		"clgName": "etlab-preprod"
+	},
+	"247": {
+		"clgId": 247,
+		"base_url": "https://ipms.etlab.in/androidapp/",
+		"regUrl": "https://ipms.etlab.in/androidapp/registration/",
+		"clgName": "Institute of paramedical science,"
+	},
+	"249": {
+		"clgId": 249,
+		"base_url": "https://med.etlab.in/androidapp/",
+		"regUrl": "https://med.etlab.in/androidapp/registration/",
+		"clgName": "Etlab Medicine"
+	},
+	"250": {
+		"clgId": 250,
+		"base_url": "https://baselius.etlab.in/androidapp/",
+		"regUrl": "https://baselius.etlab.in/androidapp/registration/",
+		"clgName": "Baselius College Kottayam"
+	},
+	"251": {
+		"clgId": 251,
+		"base_url": "https://sngcas.etlab.in/androidapp/",
+		"regUrl": "https://sngcas.etlab.in/androidapp/registration/",
+		"clgName": "Sree Narayana Guru College Of Advanced Studies Chempazhanthy"
+	},
+	"252": {
+		"clgId": 252,
+		"base_url": "https://cat.etlab.app/androidapp/",
+		"regUrl": "https://cat.etlab.app/androidapp/registration/",
+		"clgName": "College of Architecture Trivandrum"
+	}
+}
