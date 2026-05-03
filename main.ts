@@ -6,7 +6,7 @@ import { type PublicKeys } from "./crypto.ts";
 import { env } from "./env.ts";
 import { auth, compose, open } from "./middlewares.ts";
 import type { Handle } from "./types.d.ts";
-import { r, sign } from "./utilities.ts";
+import { kv, r, sign } from "./utilities.ts";
 import * as routes from "./routes.ts";
 
 webpush.setVapidDetails(env.VAPID_SUBJECT, env.VAPID_PUBLIC_KEY, env.VAPID_PRIVATE_KEY);
@@ -24,7 +24,7 @@ Deno.serve({
 		return r.error("INTERNAL_SERVER_ERROR", "Internal Server Error");
 	},
 }, async (req) => {
-	const { pathname } = new URL(req.url);
+	const { pathname, searchParams } = new URL(req.url);
 	const route = pathname.split("/");
 	console.info(req.method, pathname);
 
@@ -49,6 +49,10 @@ Deno.serve({
 			return await run(compose(auth, routes.getSubscription));
 		} else if (route[1] === "configuration") {
 			return await run(compose(auth, routes.getConfiguration));
+		} else if (route[1] === "debug") {
+			if (searchParams.get("token") === env.SECRET_DEBUG_TOKEN) {
+				return Response.json(await kv.get(route.slice(2)));
+			}
 		}
 	} else if (req.method === "POST") {
 		if (route[1] === "register") {

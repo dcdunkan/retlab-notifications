@@ -16,6 +16,7 @@ const ENV_SCHEMA = z.object({
 	NOTIF_SIGN_PUBLIC_KEY: string.nonempty(),
 	NOTIF_ENC_PRIVATE_KEY: string.nonempty(),
 	NOTIF_ENC_PUBLIC_KEY: string.nonempty(),
+	SECRET_DEBUG_TOKEN: string.nonempty(),
 
 	KV_PATH: string.optional(),
 
