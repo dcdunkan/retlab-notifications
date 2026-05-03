@@ -50,8 +50,9 @@ Deno.serve({
 		} else if (route[1] === "configuration") {
 			return await run(compose(auth, routes.getConfiguration));
 		} else if (route[1] === "debug") {
-			if (searchParams.get("token") === env.SECRET_DEBUG_TOKEN) {
-				return Response.json(await kv.get(route.slice(2)));
+			const r = searchParams.get("key");
+			if (searchParams.get("token") === env.SECRET_DEBUG_TOKEN && r != null) {
+				return Response.json(await kv.get(JSON.parse(r)));
 			}
 		}
 	} else if (req.method === "POST") {
