@@ -145,8 +145,8 @@ export const subscribe: Handle = async (event) => {
 			expirationTime: parsed.subscription.expirationTime,
 		},
 		JSON.stringify({
-			title: "Notification check",
-			body: "Are you seeing this?",
+			title: "Hi from the notification server!",
+			body: "If you can see this, you should be able receive notifications",
 		}),
 	);
 
