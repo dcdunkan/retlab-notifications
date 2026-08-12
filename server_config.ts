@@ -34,7 +34,7 @@ export const ServerConfig = {
 			items: {
 				new_attendance_marked: {
 					name: "New attendance marked",
-					active: false,
+					active: true,
 					description: "when new subject attendance is marked",
 				},
 			},
