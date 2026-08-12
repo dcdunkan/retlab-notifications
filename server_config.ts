@@ -126,9 +126,9 @@ export const Validators: ServerConfigValidators<typeof ServerConfig> = {
 		.max(ServerConfig.config["min-update-interval"].max),
 	"min-attendance-threshold-percent": z.int()
 		.min(ServerConfig.config["min-attendance-threshold-percent"].min)
-		.max(ServerConfig.config["min-attendance-threshold-percent"].min),
+		.max(ServerConfig.config["min-attendance-threshold-percent"].max),
 	"max-attendance-threshold-percent": z.int()
 		.min(ServerConfig.config["max-attendance-threshold-percent"].min)
-		.max(ServerConfig.config["max-attendance-threshold-percent"].min),
+		.max(ServerConfig.config["max-attendance-threshold-percent"].max),
 };
 34;
