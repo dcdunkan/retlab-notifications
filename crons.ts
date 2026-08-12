@@ -332,7 +332,7 @@ async function sendPeriodicalHealthCheckup(user: FilteredUser): Promise<FetchAnd
 	};
 }
 
-Deno.cron("Periodical health-check", { hour: { every: 24 } }, async () => {
+Deno.cron("Periodical health-check", "0 0 * * *", async () => {
 	console.log("Starting cron: periodical health-check");
 	const cronStart = Date.now();
 	const users = await Array.fromAsync(
