@@ -1,4 +1,1 @@
-{
-	"sign": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAWbCkfCjnNzxoK90lCIzA6jECa/8dqsoynZCqrRiUltI=\n-----END PUBLIC KEY-----\n",
-	"enc": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VuAyEAPP3ISH53RZxrUybUF+qUdaxelHfMpSyKsTUmIHqgpko=\n-----END PUBLIC KEY-----\n"
-}
+{"sign":"-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAd6LPSLzE0GFh0BVuP5BJNYzxSTxqu01HcmVBdYMEA6o=\n-----END PUBLIC KEY-----\n","enc":"-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VuAyEATwHXXcwfPO1xyuYrLFpUXXeQwugoPeTx9bbJFxAfZig=\n-----END PUBLIC KEY-----\n"}
