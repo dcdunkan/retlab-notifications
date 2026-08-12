@@ -1,4 +1,5 @@
 import surveys from "./surveys.ts";
+import attendance from "./attendance.ts";
 
 import { ServerConfig } from "../server_config.ts";
 import { NotificationChannelMethods, NotificationChannelTags } from "../types.d.ts";
@@ -9,6 +10,6 @@ export const channelHandlers: {
 } = {
 	series_exams: null,
 	assignments: null,
-	attendance: null,
+	attendance: attendance,
 	surveys: surveys,
 };

@@ -96,6 +96,23 @@ export const ServerConfig = {
 			type: "boolean",
 			defaultValue: true,
 		},
+		"min-attendance-threshold-percent": {
+			name: "Minimum attendance percentage cutoff",
+			description:
+				"Minimum attendance percentage considered as safe range. Above or equal to this value will be considered as safe. If set to more than the maximum cutoff, then it will be capped by it.",
+			type: "integer",
+			defaultValue: 75,
+			min: 1,
+			max: 99,
+		},
+		"max-attendance-threshold-percent": {
+			name: "Maximum attendance percentage cutoff",
+			description: "The highest percentage considered as safe. Anything above it is considered as excellent.",
+			type: "integer",
+			defaultValue: 90,
+			min: 1,
+			max: 99,
+		},
 	},
 } satisfies ServerConfiguration;
 
@@ -107,4 +124,11 @@ export const Validators: ServerConfigValidators<typeof ServerConfig> = {
 	"min-update-interval": z.int()
 		.min(ServerConfig.config["min-update-interval"].min)
 		.max(ServerConfig.config["min-update-interval"].max),
+	"min-attendance-threshold-percent": z.int()
+		.min(ServerConfig.config["min-attendance-threshold-percent"].min)
+		.max(ServerConfig.config["min-attendance-threshold-percent"].min),
+	"max-attendance-threshold-percent": z.int()
+		.min(ServerConfig.config["max-attendance-threshold-percent"].min)
+		.max(ServerConfig.config["max-attendance-threshold-percent"].min),
 };
+34;

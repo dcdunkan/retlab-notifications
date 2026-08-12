@@ -150,3 +150,9 @@ export function isValidDate(d: Date): boolean {
 export function pluralize(count: number, singular: string, plural: string): string {
 	return count == 1 ? singular : plural;
 }
+export function safeDivision(numerator: number, denominator: number): number {
+	return denominator == 0 ? 0 : numerator / denominator;
+}
+export function cutePercent(percent: number, decimals: number = 2): number {
+	return Number.parseFloat(percent.toFixed(decimals));
+}
