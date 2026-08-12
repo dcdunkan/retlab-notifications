@@ -259,6 +259,125 @@ async function fetchAndSendNotifications(now: number, user: FilteredUser): Promi
 	};
 }
 
+async function sendPeriodicalHealthCheckup(user: FilteredUser): Promise<FetchAndSendResults | null> {
+	const failedDeviceIds = new Set<string>();
+
+	const notification: Notification<{ type: "health-check" }> = {
+		data: { type: "health-check" },
+		title: "Just checking if everything's fine",
+		body: "Please ignore.",
+	};
+
+	let notificationsSent = 0;
+
+	// Send notifications to all devices parallely
+	await Promise.allSettled(user.data.devices.map(async (device, i) => {
+		// Send all notifications to the device parallely.
+
+		// If sending one notification fails due to e.g. unauthorized or some other error,
+		// all notifications are halted, and throws the error upwards, which is settled upstream.
+		try {
+			await webpush.sendNotification(
+				{
+					endpoint: device.endpoint,
+					keys: device.keys,
+					expirationTime: device.expirationTime,
+				},
+				JSON.stringify(notification),
+			);
+			notificationsSent++;
+
+			if (device.fails > 0) {
+				device.fails = 0;
+			}
+		} catch (error) {
+			if (error instanceof WebPushError) {
+				user.data.devices[i].fails++;
+
+				if (user.data.devices[i].fails >= env.MAX_PER_DEVICE_CONSECUTIVE_FAIL_COUNT) {
+					failedDeviceIds.add(device.id);
+					throw new Error("failed"); // throwing makes further sending of notifications stop, doesn't it?
+				}
+
+				if (error.statusCode === 400) {
+					// bbbaaaddd???
+				} else if (error.statusCode === 401 || error.statusCode === 403) {
+					// unauthorized means, that the server vapid key connected subscription
+					// doesn't match the subscription stored. or vapid key changed or something.
+					failedDeviceIds.add(device.id);
+					throw new Error("failed");
+				} else if (error.statusCode === 404 || error.statusCode === 410) {
+					// subscription endpoint gone!
+					failedDeviceIds.add(device.id);
+					throw new Error("failed");
+				} else if (error.statusCode === 413) {
+					// WRONG server stuff.
+				}
+			} else {
+				console.error("Something went wrong while sending out notification");
+				console.error(user, device, notification);
+				throw new Error("failed");
+			}
+		}
+	}));
+
+	if (failedDeviceIds.size > 0) {
+		user.data.devices = user.data.devices.filter((d) => !failedDeviceIds.has(d.id));
+		await kv.set(user.key, user.data satisfies User);
+	}
+
+	return {
+		notificationsSent: notificationsSent,
+		devicesCount: user.data.devices.length,
+	};
+}
+
+Deno.cron("Periodical health-check", { hour: { every: 24 } }, async () => {
+	console.log("Starting cron: periodical health-check");
+	const cronStart = Date.now();
+	const users = await Array.fromAsync(
+		kv.list<User>({ prefix: ["users"] }),
+		(entry) => getFilteredUser(entry),
+	);
+	console.log("Found", users.length, "users from kv");
+
+	const filteredUsers: FilteredUser[] = users.filter((user) => user != null);
+	console.log("Filtered", filteredUsers.length, "eligible users");
+
+	const settled = await Promise.allSettled(
+		filteredUsers.map((user) =>
+			sendPeriodicalHealthCheckup(user).then((result) => {
+				if (result == null) console.warn("User has deregistered", user);
+				else {
+					console.log(
+						`Sent ${result.notificationsSent} notifications to ${result.devicesCount} devices of user ${user.data.collegeId}/${user.data.username}`,
+					);
+				}
+				return result;
+			})
+		),
+	);
+
+	const summary = settled.reduce((acc, r) => {
+		if (r.status === "rejected") {
+			acc.errors++;
+			return acc;
+		}
+		if (r.value == null) {
+			acc.deregistered++;
+			return acc;
+		}
+		acc.notificationsSent += r.value.notificationsSent;
+		return acc;
+	}, { notificationsSent: 0, deregistered: 0, errors: 0 });
+
+	console.log(
+		`Cron done in ${
+			Date.now() - cronStart
+		}ms | sent=${summary.notificationsSent} deregistered=${summary.deregistered} errors=${summary.errors}`,
+	);
+});
+
 Deno.cron("Fetch and send notifications", { minute: { every: 5 } }, async () => {
 	console.log("Starting cron: fetch and send notifications");
 	const cronStart = Date.now();
