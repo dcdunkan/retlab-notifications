@@ -38,6 +38,11 @@ export default defineChannelHandler("attendance", {
 
 		if (items.length === 0) return notifications;
 
+		const thresholds = {
+			min: Math.min(config["min-attendance-threshold-percent"], config["max-attendance-threshold-percent"]),
+			max: config["max-attendance-threshold-percent"],
+		};
+
 		const parsedCurr = parseAttendance(curr);
 		const parsedPrev = parseAttendance(prev);
 
@@ -52,8 +57,8 @@ export default defineChannelHandler("attendance", {
 
 			const prevPercent = getPercent(prevSubject.normal);
 			const currPercent = getPercent(currSubject.normal);
-			const minStats = getPercentStats(currSubject.normal, config["min-attendance-threshold-percent"]);
-			const maxStats = getPercentStats(currSubject.normal, config["max-attendance-threshold-percent"]);
+			const minStats = getPercentStats(currSubject.normal, thresholds.min);
+			const maxStats = getPercentStats(currSubject.normal, thresholds.max);
 			const statusText = getStatusText(minStats, maxStats);
 
 			// attendance for new classes have been marked
