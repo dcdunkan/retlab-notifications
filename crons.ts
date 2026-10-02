@@ -14,7 +14,10 @@ type FilteredUser = {
 	channels: NotificationChannelTags<typeof ServerConfig>[];
 };
 
-function getFilteredUser(entry: Deno.KvEntry<User>): FilteredUser | null {
+function getFilteredUser(entry: Deno.KvEntry<User>, options: {
+	ignoreLastChecked: boolean;
+	ignoreSubscribedChannels: boolean;
+}): FilteredUser | null {
 	const resolvedConfig = Object.keys(ServerConfig.config).reduce((p, _key) => {
 		const key = _key as keyof typeof ServerConfig.config;
 		p[key] = (key in entry.value.configuration && entry.value.configuration[key] != null
@@ -25,10 +28,14 @@ function getFilteredUser(entry: Deno.KvEntry<User>): FilteredUser | null {
 
 	const now = Date.now();
 	const diff = Math.round(((entry.value.lastCheckedOn + resolvedConfig["min-update-interval"] * MINUTE) - now) / 1000);
-	if (diff > 0) {
+	if (!options.ignoreLastChecked && diff > 0) {
+		console.log(1);
 		return null;
 	}
-	if (entry.value.devices.length === 0) return null;
+	if (entry.value.devices.length === 0) {
+		console.log(2);
+		return null;
+	}
 
 	const subscribedChannels: NotificationChannelTags<typeof ServerConfig>[] = [];
 	for (const _channelTag in entry.value.channels) {
@@ -36,7 +43,10 @@ function getFilteredUser(entry: Deno.KvEntry<User>): FilteredUser | null {
 		if (!(channelTag in ServerConfig.channels)) continue;
 		subscribedChannels.push(channelTag);
 	}
-	if (subscribedChannels.length === 0) return null; // unsubscribe bro, wasting the compute
+	if (!options.ignoreSubscribedChannels && subscribedChannels.length === 0) {
+		console.log(3);
+		return null;
+	} // unsubscribe bro, wasting the compute
 
 	return {
 		key: entry.key,
@@ -337,7 +347,11 @@ Deno.cron("Periodical health-check", "0 0 * * *", async () => {
 	const cronStart = Date.now();
 	const users = await Array.fromAsync(
 		kv.list<User>({ prefix: ["users"] }),
-		(entry) => getFilteredUser(entry),
+		(entry) =>
+			getFilteredUser(entry, {
+				ignoreLastChecked: true,
+				ignoreSubscribedChannels: true,
+			}),
 	);
 	console.log("Found", users.length, "users from kv");
 
@@ -383,7 +397,11 @@ Deno.cron("Fetch and send notifications", { minute: { every: 5 } }, async () => 
 	const cronStart = Date.now();
 	const users = await Array.fromAsync(
 		kv.list<User>({ prefix: ["users"] }),
-		(entry) => getFilteredUser(entry),
+		(entry) =>
+			getFilteredUser(entry, {
+				ignoreLastChecked: false,
+				ignoreSubscribedChannels: false,
+			}),
 	);
 	console.log("Found", users.length, "users from kv");
 
