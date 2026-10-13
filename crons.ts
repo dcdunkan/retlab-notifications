@@ -29,7 +29,7 @@ function getFilteredUser(entry: Deno.KvEntry<User>, options: {
 	const now = Date.now();
 	const diff = Math.round(((entry.value.lastCheckedOn + resolvedConfig["min-update-interval"] * MINUTE) - now) / 1000);
 	if (!options.ignoreLastChecked && diff > 0) {
-		console.log(1);
+		console.log(`skip ${entry.value.username}: ${diff}s until next check`);
 		return null;
 	}
 	if (entry.value.devices.length === 0) {
@@ -72,8 +72,12 @@ async function fetchAndSendNotifications(now: number, user: FilteredUser): Promi
 
 	const deferredKvOps = kv.atomic();
 
+	console.log(user.channels);
+
 	const settledResults = await Promise.allSettled(user.channels.map(async (channel) => {
 		if (user.data.channels[channel] == null) return;
+
+		console.log("doing", channel, "for", user.data.collegeId + "+" + user.data.username);
 
 		// check if any of the subscribed-to sub-channels are active
 		const subscribedItems: string[] = user.data.channels[channel].items;
@@ -83,19 +87,26 @@ async function fetchAndSendNotifications(now: number, user: FilteredUser): Promi
 		if (activeItems.length === 0) return;
 
 		const channelHandler = channelHandlers[channel];
+
+		console.log("found handler?:", channelHandler != null);
 		if (channelHandler == null) return;
 
 		// deno-lint-ignore no-explicit-any
 		const channelItems = intersect(subscribedItems, activeItems) as any;
+		console.log("proxying");
 		const current = await channelHandler.fetch(proxyCall, user.config, channelItems);
+		console.log("proxy done");
 		const currentHash = await hexSha256(JSON.stringify(current));
 		const cachedHash = user.data.channels[channel].cachedHash;
+
+		console.log(currentHash);
 
 		if (cachedHash != null && cachedHash === currentHash) {
 			return; // no changes, no notifications.
 		}
 
 		if (cachedHash != null) {
+			console.log("comparing for changes");
 			// if its not the first time.
 			const cached = await kv.get<Uint8Array>(["cache", user.data.collegeId, user.data.username, channel]);
 			if (cached.value != null) {
@@ -128,6 +139,7 @@ async function fetchAndSendNotifications(now: number, user: FilteredUser): Promi
 		if (user.data.channels[channel] == null) continue; // wont ever happene
 
 		if (result.status === "rejected") {
+			console.log("failed call", result.reason);
 			if (result.reason != null && result.reason instanceof ProxyError) {
 				if (result.reason.statusCode === 401) {
 					// same as unregistration:
@@ -392,7 +404,7 @@ Deno.cron("Periodical health-check", "0 0 * * *", async () => {
 	);
 });
 
-Deno.cron("Fetch and send notifications", { minute: { every: 5 } }, async () => {
+async function crox() {
 	console.log("Starting cron: fetch and send notifications");
 	const cronStart = Date.now();
 	const users = await Array.fromAsync(
@@ -439,4 +451,8 @@ Deno.cron("Fetch and send notifications", { minute: { every: 5 } }, async () => 
 			Date.now() - cronStart
 		}ms | sent=${summary.notificationsSent} deregistered=${summary.deregistered} errors=${summary.errors}`,
 	);
-});
+}
+
+// await crox();
+
+Deno.cron("Fetch and send notifications", { minute: { every: 5 } }, crox);
