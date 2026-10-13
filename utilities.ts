@@ -65,7 +65,7 @@ export async function proxyFetch<T>(o: {
 		headers: {
 			Authorization: "Bearer " + o.authToken,
 			// https://github.com/sveltejs/kit/issues/6589#issuecomment-1986525874
-			// can't understand this kind of shit
+			// "Cross-site POST form submissions are forbidden", can't understand this kind of shit
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
