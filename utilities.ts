@@ -43,10 +43,12 @@ export const r = {
 
 export class ProxyError extends Error {
 	public statusCode: number;
+	public reason: string;
 
-	constructor(statusCode: number) {
-		super("Proxy request failed with status code: " + statusCode);
+	constructor(statusCode: number, reason: string) {
+		super("Proxy request failed with status code: " + statusCode + ", saying: " + reason);
 		this.statusCode = statusCode;
+		this.reason = reason;
 	}
 }
 
@@ -60,7 +62,12 @@ export async function proxyFetch<T>(o: {
 }) {
 	const response = await fetch(env.RET_PROXY_URL, {
 		method: "POST",
-		headers: { Authorization: "Bearer " + o.authToken },
+		headers: {
+			Authorization: "Bearer " + o.authToken,
+			// https://github.com/sveltejs/kit/issues/6589#issuecomment-1986525874
+			// can't understand this kind of shit
+			"Content-Type": "application/json",
+		},
 		body: JSON.stringify({
 			collegeId: o.collegeId,
 			accountUsername: o.username,
@@ -69,7 +76,22 @@ export async function proxyFetch<T>(o: {
 			...(o.body == null ? {} : { body: JSON.stringify(o.body) }),
 		}),
 	});
-	if (!response.ok) throw new ProxyError(response.status);
+
+	if (!response.ok) {
+		const raw = await response.text();
+		// deno-lint-ignore no-explicit-any
+		let parsed: any = null;
+		try {
+			parsed = JSON.parse(raw);
+		} catch {
+			//
+		}
+		if (parsed == null) {
+			throw new ProxyError(response.status, raw);
+		} else {
+			throw new ProxyError(response.status, "message" in parsed ? parsed.message : "(unknown reason)");
+		}
+	}
 	return await response.json() as ProxyResponse<T>;
 }
 
