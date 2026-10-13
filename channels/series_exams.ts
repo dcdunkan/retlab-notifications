@@ -23,22 +23,29 @@ export default defineChannelHandler("series_exams", {
 		}
 		return await fetchResults();
 	},
-	compile: (_prev, curr, _config, items) => {
-		console.log(curr.length);
-		for (const item of items) {
-			switch (item) {
-				case "results":
-					break;
-				default:
-					console.warn(`warning: unhandled item '${item}' in channel 'series_exams'`);
-					// no use
-					break;
+	compile: (prev, curr, _config, items) => {
+		const notifications: Notification<{ type: "series-result" }>[] = [];
+		if (!items.includes("results")) return notifications;
+
+		for (const { session, results } of curr) {
+			const seen = new Set(prev.find((p) => p.session === session)?.results.map((r) => r.subject));
+			for (const r of results) {
+				if (seen.has(r.subject)) continue;
+				notifications.push({
+					title: `Series exam ${session} result published: ${r.subject}`,
+					body: `You scored ${r.obtained_mark} / ${r.max_mark}.`,
+					data: { type: "series-result" },
+				});
 			}
 		}
-		const notifications: Notification<undefined>[] = [];
 		return notifications;
 	},
 	digest: (notifications) => {
-		return notifications;
+		if (notifications.length <= 2) return notifications;
+		return [{
+			title: `${notifications.length} new series exam results`,
+			body: "",
+			data: { type: "series-result" as const },
+		}];
 	},
 });
