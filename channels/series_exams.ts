@@ -12,6 +12,7 @@ export default defineChannelHandler("series_exams", {
 			for (let i = 1; i <= maxSessions; i++) {
 				promises.push(
 					request<result.ResultSeasonal[]>(ApiEndPoints.RESULT_SEASONAL_URL, {
+						method: "POST",
 						body: {
 							sem_id: "",
 							session: `${i}`,
