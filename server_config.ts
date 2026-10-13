@@ -44,7 +44,7 @@ export const ServerConfig = {
 			description: "",
 			items: {
 				results: {
-					active: false,
+					active: true,
 					name: "Series exam results",
 					description: "when series examination results are published or modified (set max-sessions in config)",
 				},
